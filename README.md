@@ -35,7 +35,7 @@
 
 ## 技術詳細
 
-Next.js, Emotion, fast-api.js, TypeScript, Iconify
+Next.js, Emotion, face-api.js, TypeScript, Iconify
 
 ## 開発用
 
