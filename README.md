@@ -1,4 +1,4 @@
-# Face Mosicer 　（フェイスモザイカー）
+# Face Mosicer
 
 ## 概要
 
