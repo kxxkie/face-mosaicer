@@ -1,4 +1,4 @@
-import { colors } from '@/libs/styles';
+import { colors, mediaQuerys } from '@/libs/styles';
 import styled from '@emotion/styled';
 
 const Select = styled.select({
@@ -12,6 +12,7 @@ const Select = styled.select({
   display: 'block',
   fontSize: 14,
   maxWidth: 150,
+  [mediaQuerys.sp]: { width: '100%', maxWidth: 250 },
 });
 
 interface Props {

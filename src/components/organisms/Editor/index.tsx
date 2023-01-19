@@ -4,11 +4,12 @@ import { RootLayout } from '@/components/layouts';
 import { useEditor } from '@/hooks/organisms/Editor';
 import { Flex, Button, LoadingCover } from '@/components/atoms';
 import { FaceSelect, FaceTypeInput, MosaicSizeInput, EmojiInput, SwitchVisibility } from '@/components/organisms';
+import { FACE } from '@/constants';
 
 const NavText = styled.div({ fontSize: 14, cursor: 'pointer', color: colors.acceents[4], userSelect: 'none' });
 const ImageDisplayWrapper = styled.div({
   position: 'relative',
-  width: '60%',
+  width: FACE.PREVIEW_SIZE,
   [mediaQuerys.sp]: { order: -1, width: '100%' },
 });
 const ImageDisplay = styled.canvas({
@@ -21,6 +22,7 @@ const OptionList = styled.ul({
   display: 'flex',
   rowGap: 30,
   flexDirection: 'column',
+  [mediaQuerys.sp]: { alignItems: 'center' },
 });
 const OptionSection = styled(Flex)({ rowGap: 10, flexDirection: 'column' });
 const OptionLabel = styled.div({ color: colors.acceents[4], fontSize: 14 });
@@ -103,7 +105,9 @@ export const Editor: React.FC<Props> = ({ file, goBack }) => {
                     onChange={(hidden) => updateFaceList({ ...activeFace, hidden })}
                   />
                 </OptionSection>
-                <OptionSection css={{ flexGrow: 1, justifyContent: 'flex-end' }}>
+                <OptionSection
+                  css={{ flexGrow: 1, justifyContent: 'flex-end', [mediaQuerys.sp]: { maxWidth: 250, width: '100%' } }}
+                >
                   <Button onClick={downloadFullSize} isLoading={isDownloading}>
                     download
                   </Button>
